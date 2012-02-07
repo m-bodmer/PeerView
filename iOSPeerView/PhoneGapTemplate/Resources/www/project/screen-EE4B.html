@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    
+    <head>
+        <script type="text/javascript" src="res/lib/detectmobilebrowser.js">
+        </script>
+        <script type="text/javascript">
+        var screen_mobile = true;
+var screen_width = 320;
+var screen_height = 480;
+var browser_mobile = is_mobile_browser();
+if (screen_mobile && !browser_mobile && top == window)
+{
+    top.location.href = './mob-screen-EE4B.html';
+}
+        </script>
+        <title>
+            Login Screen
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <link type="text/css" href="res/lib/jquerymobile/1.0/jquery.mobile-1.0.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="res/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquery/jquery-1.6.4.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/jquery.mobile.iepatch.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/1.0/jquery.mobile-1.0.js">
+        </script>
+        <script type="text/javascript" src="res/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="res/lib/store/jstore.js">
+        </script>
+        <script type="text/javascript" src="res/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/api.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/impl.js">
+        </script>
+        <script type="text/javascript" src="res/lib/phonegap.js">
+        </script>
+        <script type="text/javascript" src="res/lib/childbrowser.js">
+        </script>
+        <script type="text/javascript" src="res/lib/barcodescanner.js">
+        </script>
+        <link href="res/css/mobilebase.css" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+        if (navigator.userAgent.match(/iP/i))
+{
+    $(window).bind('orientationchange', function(event)
+    {
+        $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+    }).trigger('orientationchange');
+}
+        </script>
+        <div data-role="page" style="min-height:480px;" id="j_13" class="type-interior">
+            <div data-role="content" id="j_16" name="mobilecontainer1" class="mobilecontainer1"
+            dsid="mobilecontainer1" data-theme='a'>
+                <link href="screen-EE4B.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="screen-EE4B.js">
+                </script>
+                <div class="mobileimage0_div">
+                    <img class="mobileimage0" src="files/views/assets/asset-1292483" id="j_17" dsid="mobileimage1"
+                    name="mobileimage1" />
+                </div>
+                <div name="mobilelabel3" id="j_18" dsid="mobilelabel3" data-role="tiggr_label" class='mobilelabel2'>
+                    Username
+                </div>
+                <div data-role="fieldcontain" class="mobiletextinput2">
+                    <input type="text" name="usernameField" dsid="usernameField" id="j_19" placeholder=""
+                    tabIndex="1" data-theme='e' class='mobiletextinput2' />
+                </div>
+                <div name="mobilelabel5" id="j_20" dsid="mobilelabel5" data-role="tiggr_label" class='mobilelabel3'>
+                    Password
+                </div>
+                <div data-role="fieldcontain" class="mobiletextinput3">
+                    <input type="text" name="passwordField" dsid="passwordField" id="j_21" placeholder=""
+                    tabIndex="1" data-theme='e' class='mobiletextinput3' />
+                </div>
+                <div class="mobilebutton1_wrapper ">
+                    <a data-role="button" name="loginButton" dsid="loginButton" class=' mobilebutton1'
+                    id='j_22' data-inline='false' data-theme='e' tabIndex="3">Login</a>
+                </div>
+                <div id='j_23' dsid="mobilespacer2" class='mobilespacer mobilespacer2'>
+                </div>
+                <div class="mobilegrid0_wrapper">
+                    <table id="j_24" class="mobilegrid0" dsid="mobilegrid1" cellpadding=0 cellspacing=0>
+                        <col style="width:11.4%;">
+                            <col style="width:88.6%;">
+                                <tr>
+                                    <td id="j_25" name="mobilegridcell1" class="mobilegridcell0" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                        </div>
+                                    </td>
+                                    <td id="j_26" name="mobilegridcell2" class="mobilegridcell1" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div class="mobilebutton2_wrapper ">
+                                                <a data-role="button" name="createaccountButton" dsid="createaccountButton" class=' mobilebutton2'
+                                                id='j_27' data-inline='true' data-theme='e' tabIndex="4">Create New Account</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

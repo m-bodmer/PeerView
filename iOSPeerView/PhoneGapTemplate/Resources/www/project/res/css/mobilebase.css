@@ -1,0 +1,159 @@
+body{
+	overflow: auto;
+}
+
+.ui-field-contain {
+    padding: 0;
+    border-bottom-width: 0px;
+}
+.ui-selectmenu {
+    z-index: 1001 !important;
+}
+
+/*
+* Overload .ui-header .ui-title, .ui-footer .ui-title classes,
+* because in flex and mobile preview they has differend font-size
+*/
+
+.ui-header .ui-title, .ui-footer .ui-title{
+	font-size: 15px;
+}
+
+
+/* Need to match mobilegrid cells min-height in preview to min-height in flex */
+.ui-content .ui-block-a,
+.ui-content .ui-block-b,
+.ui-content .ui-block-c,
+.ui-content .ui-block-d,
+.ui-content .ui-block-e {
+	min-height: 51px !important;
+}
+
+/* Need to let user have a long caption in header */
+.ui-mobile-viewport .ui-header .ui-title {
+	margin: 0.55em 0 0.6em;
+	/*original jquery mobile is "0.6em 90px 0.8em"*/
+}
+
+/* We set own margins to elements in control groups and we need to discard native jquerymobile's margins */
+.ui-mobile-viewport fieldset.ui-controlgroup {
+	margin: 0;
+}
+
+.ui-mobile-viewport .ui-btn[class*="mobilebutton"] {
+	margin: 0;
+}
+
+div.ui-loader {
+	display:none !important;
+}
+
+.ui-mobile-viewport .ui-header .ui-btn-left {
+	left: 0; /*original jquery mobile is "10px"*/
+	top: 0.25em; /*original jquery mobile is "0.4em"*/
+}
+
+.ui-mobile-viewport .ui-header .ui-btn-right {
+	right: 0; /*original jquery mobile is "10px"*/
+	top: 0.25em; /*original jquery mobile is "0.4em"*/
+}
+
+.ui-mobile-viewport input.ui-input-text {
+	padding: 6px;
+}
+
+.ui-mobile-viewport .ui-header div[class*="mobileselectmenu"] {
+	margin: 0;
+}
+
+.ui-mobile-viewport .ui-header div[class*="mobilebutton"][class*="_wrapper"] {
+	margin: 0;
+}
+
+.ui-mobile-viewport .ui-header .ui-btn-right div[class*="mobilebutton"][class*="_wrapper"] {
+	text-align: right;
+}
+
+.ui-mobile-viewport textarea.ui-input-text {
+	margin: 0;	
+}
+
+.ui-mobile-viewport .ui-footer div[class*="mobilebutton"][class*="_wrapper"] {
+	margin: 0;
+	float: left;
+}
+
+.ui-mobile-viewport .ui-footer div[class*="mobileselectmenu"].ui-field-contain {
+	margin: 0;
+	float: left;
+}
+
+.ui-mobile-viewport .ui-footer .ui-body {
+	clear: none;	
+}
+
+
+.ui-mobile-viewport .ui-footer div[class*="mobilebutton"][class*="_wrapper"] a.ui-btn {
+	margin: 0 !important;
+}
+
+.ui-mobile-viewport .ui-header div.ui-navbar,
+.ui-mobile-viewport .ui-footer div.ui-navbar  {
+	position:absolute;
+	width: 100%;
+	bottom: 0px;
+}
+
+
+.ui-mobile-viewport input.ui-input-text, 
+.ui-mobile-viewport textarea.ui-input-text {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+ 	width: 100%;
+}
+
+.ui-mobile-viewport .ui-input-search {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+ 	width: 100%;
+}
+
+/*.ui-mobile-viewport div.ui-slider {
+	width: 40%;	
+}*/
+
+
+/*
+
+.ui-mobile-viewport .ui-grid-a,
+.ui-mobile-viewport .ui-grid-b,
+.ui-mobile-viewport .ui-grid-c,
+.ui-mobile-viewport .ui-grid-d {
+    overflow: visible;
+}
+*/
+
+/* Ajax busy indicator*/
+
+#ajaxBusy {
+	display: none;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 999999999;
+	opacity: 0.5;
+	background-color: #EEEEEE;
+}
+	
+#ajaxBusy img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

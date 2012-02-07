@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    
+    <head>
+        <script type="text/javascript" src="res/lib/detectmobilebrowser.js">
+        </script>
+        <script type="text/javascript">
+        var screen_mobile = true;
+var screen_width = 320;
+var screen_height = 480;
+var browser_mobile = is_mobile_browser();
+if (screen_mobile && !browser_mobile && top == window)
+{
+    top.location.href = './mob-screen-0E78.html';
+}
+        </script>
+        <title>
+            Register Account Screen
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <link type="text/css" href="res/lib/jquerymobile/1.0/jquery.mobile-1.0.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="res/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquery/jquery-1.6.4.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/jquery.mobile.iepatch.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/1.0/jquery.mobile-1.0.js">
+        </script>
+        <script type="text/javascript" src="res/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="res/lib/store/jstore.js">
+        </script>
+        <script type="text/javascript" src="res/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/api.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/impl.js">
+        </script>
+        <script type="text/javascript" src="res/lib/phonegap.js">
+        </script>
+        <script type="text/javascript" src="res/lib/childbrowser.js">
+        </script>
+        <script type="text/javascript" src="res/lib/barcodescanner.js">
+        </script>
+        <link href="res/css/mobilebase.css" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+        if (navigator.userAgent.match(/iP/i))
+{
+    $(window).bind('orientationchange', function(event)
+    {
+        $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+    }).trigger('orientationchange');
+}
+        </script>
+        <div data-role="page" style="min-height:480px;" id="j_0" class="type-interior">
+            <div data-role="header" data-position="fixed" data-theme='a' data-backbtn="false"
+            name="mobileheader2" id="j_2" class='mobileheader0'>
+                <h1 dsid="mobileheader2">
+                    Register New Account
+                </h1>
+            </div>
+            <div data-role="content" id="j_3" name="mobilecontainer2" class="mobilecontainer0"
+            dsid="mobilecontainer2" data-theme='a'>
+                <link href="screen-0E78.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="screen-0E78.js">
+                </script>
+                <div name="mobilelabel3" id="j_4" dsid="mobilelabel3" data-role="tiggr_label" class='mobilelabel0'>
+                    Desired Username
+                </div>
+                <div data-role="fieldcontain" class="mobiletextinput0">
+                    <input type="text" name="mobiletextinput3" dsid="mobiletextinput3" id="j_5" value=""
+                    tabIndex="2" data-theme='e' class='mobiletextinput0' />
+                </div>
+                <div id='j_6' dsid="mobilespacer2" class='mobilespacer mobilespacer0'>
+                </div>
+                <div name="mobilelabel5" id="j_7" dsid="mobilelabel5" data-role="tiggr_label" class='mobilelabel1'>
+                    Desired Password
+                </div>
+                <div data-role="fieldcontain" class="mobiletextinput1">
+                    <input type="text" name="mobiletextinput7" dsid="mobiletextinput7" id="j_8" value=""
+                    tabIndex="2" data-theme='e' class='mobiletextinput1' />
+                </div>
+                <div id='j_9' dsid="mobilespacer4" class='mobilespacer mobilespacer1'>
+                </div>
+                <div class="mobilebutton0_wrapper ">
+                    <a data-role="button" name="mobilebutton6" dsid="mobilebutton6" class=' mobilebutton0'
+                    id='j_10' data-inline='false' data-theme='e' tabIndex="3">Register Account</a>
+                </div>
+            </div>
+            <div data-role="footer" class="mobilefooter0" data-position="fixed" id="j_11" data-theme='a'>
+            </div>
+        </div>
+    </body>
+
+</html>

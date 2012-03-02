@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+
+	<title>PeerView Peer Evaluations. Simplified.</title>
+
+	<!--[if IE]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+	<!--The refresh tag makes it so your browser refreshes the page every 5 seconds if you want to view changes easier-->
+	<!--<meta http-equiv="refresh" content="5" />-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" id="viewport" content="height=device-height,width=device-width,user-scalable=yes" />
+
+	<!-- Include JQuery and Basic CSS file-->
+	<link href="css/login.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
+
+	<!-- jQuery UI-->
+	<link type="text/css" href="css/sunny/jquery-ui-1.8.18.custom.css" rel="stylesheet" />	
+	<script type="text/javascript" src="scripts/jquery-ui-1.8.18.custom.min.js"></script>
+
+	<!-- Ajax Script for Logging In and Button Theming-->
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#login").click(function() {
+
+			var action = $("#form1").attr('action');
+			var form_data = {
+				username: $("#username").val(),
+				password: $("#password").val(),
+				is_ajax: 1
+			};
+
+			$.ajax({
+				type: "POST",
+				url: action,
+				data: form_data,
+				success: function(response)
+				{
+					if(response == 'success')
+						$("#form1").slideUp('slow', function() {
+							$("#message").html("<p class='success'>You have logged in successfully!</p>");
+							setTimeout(function() {document.location.href='welcome.html'}, 2000);
+						});
+					else
+						$("#message").html("<p class='error'>Invalid username and/or password.</p>");
+				}
+			});
+			return false;
+		});
+
+		$("#forgotpass").click(function() {
+			return false;
+		});
+
+		$("#createaccount").click(function() {
+			return false;
+		});
+
+		$(function() {
+			$( "#login" ).button({
+	            icons: {
+	                primary: "ui-icon-arrowthick-1-e"
+	            },
+	        })
+	        $( "#forgotpass" ).button({
+	            icons: {
+	                primary: "ui-icon-key"
+	            },
+	        })
+	        $( "#createaccount" ).button({
+	            icons: {
+	                primary: "ui-icon-person"
+	            },
+	        })
+		});
+
+	});
+	</script>
+
+</head>
+<body id ="home">
+	
+	<!--Header for Login Screen-->
+	<header>
+		<div id="logo"><a class="peerview_logo"> <img src="images/peerviewlogo.png" alt="PeerView"></a></div>
+	</header>
+
+	<!-- Login Screen with Form -->
+	<section class="container">
+		<h1>Username</h1>
+		<form id="form1" name="form1" action="doLogin.php" method="post">
+			<p>
+		      <input type="text" name="username" id="username"/>
+		    </p>
+		    <h1>Password</h1>
+		    <p>
+		      <input type="password" name="password" id="password"/>
+		    </p>
+		    <p>
+		      <button id="login">Submit</button>
+		    </p>
+		    <p>
+		      <button id="forgotpass">Forgot Password</button>
+		    </p>
+		    <p>
+		      <button id="createaccount">Create Account</button>
+		    </p>
+		</form>
+	    <div id="message"></div>
+	</section>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
-The goal of this mobile application system is to create a more balanced and efficient system for peer grading of group presentations. 
+The goal of this mobile application system is to create a more balanced and efficient system for peer grading of group presentations in the academic settings.
 When doing peer reviews normally, students are not limited in any way to the extent of what ratings they are allowed to give to other students. 
 This often results in very high grades due to the kindness of students. 
 This system is not reflective of the true performance of the students and so once the PeerView system is implemented, there will be a drastic increase in the accuracy of peer evaluation grades.
 There is also a web system to go along with the mobile application.
 
-It is a mobile application, so in order to run it you will need a smartphone.
+It is a mobile web application, so you can just run it by opening index.html in any browser. The porting to smartphones will come in the near future.

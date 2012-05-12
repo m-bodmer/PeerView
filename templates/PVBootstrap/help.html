@@ -1,0 +1,38 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Welcome {{ user.username|capfirst }}</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class=""><a href="/">Home</a></li>
+              <li class="active"><a href="/help">Help</a></li>
+              <li class=""><a href="/logout">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+{% endblock %}
+	
+{% block content %}
+		<!-- Main hero unit for the primary welcome message -->
+		<div class="hero-unit">
+			{% if user.is_authenticated %}
+				<h2>Help</h2>
+				<br>
+				<p>1. How do I start a survey?</p>
+				Select a course, then select the survey.
+				<br>
+				<br>
+				<p>2. What if I change my mind? Can I go back and change what marks I gave?</p>
+				Yes, as long as the instructor hasn't closed the survey. Just select the survey, then choose edit.
+				<br>
+				<br>
+				<p>3. How do I know if the instructor has closed the survey?</p>
+				When you select it, you will be able to view what you submitted, but you won't be able to make any more changes.
+				<br>		
+			{% else %}
+				<h2>Please Re-Login!</h2>
+			{% endif %}			
+		</div>	
+{% endblock %}

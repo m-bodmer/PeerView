@@ -1,0 +1,37 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">PeerView</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+{% endblock %}
+	
+{% block content %}
+		<!-- Main hero unit for the primary welcome message -->
+		<div class="hero-unit">
+			<h2>The PeerView Project</h2>
+			<p>Simplifying Peer Evaluations in an academic setting</p>
+			<br>
+			{% if user.is_authenticated %}
+				<h2>Welcome {{ user.username }}</h2>
+			{% else %}
+			<!--<p><a class="btn btn-primary btn-large">Login &raquo;</a></p>-->
+			<form class="well form-inline" style="width: 250px" method="POST" action="{% url login %}">
+				{% csrf_token %} 
+				<input type="text" class="input-small" name="username" placeholder="Username">
+				<input type="password" class="input-small" name="password" placeholder="Password">
+				<button type="submit" class="btn">Go</button>
+			</form>
+			<a class="btn" href="/register_account">Create Student Account</a>
+			{% endif %}
+			<br>
+			<h3>Invalid Login - Please Try Again</h3>
+		</div>		
+{% endblock %}

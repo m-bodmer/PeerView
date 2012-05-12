@@ -1,0 +1,27 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Welcome {{ user.username|capfirst }}</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class=""><a href="/">Home</a></li>
+              <li class="active"><a href="/help">Help</a></li>
+              <li class=""><a href="/logout">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+{% endblock %}
+	
+{% block content %}
+		<!-- Main hero unit for the primary welcome message -->
+		<div class="hero-unit">
+			{% if user.is_authenticated %}
+				<h3>Survey Submitted Successfully!</h3>
+				<a class="btn btn-large" href="/">Go Back to Home</a>
+			{% else %}
+				<h2>Please Re-Login!</h2>
+			{% endif %}			
+		</div>	
+{% endblock %}

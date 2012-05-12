@@ -1,0 +1,67 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Welcome {{ user.username|capfirst }}</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li class=""><a href="/help">Help</a></li>
+              <li class=""><a href="/logout">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+{% endblock %}
+
+{% block content %}
+		<div class="hero-unit">
+			{% if user.is_authenticated %}
+				<h2>Topic: {{survey.name}} </h2>
+				<br>
+				<!-- DROP DOWN LIST OF GROUPS-->
+				<h3>Group Rated:</h3>
+				<form class="form" method="POST" action="{% url update_survey course survey.name filled_survey %}">
+				    {% csrf_token %}
+				    <h4>{{filled_survey.group.group_name}}</h4>
+				    <br>
+					{% for q in questions %}
+					    	<fieldset>
+					    		<div class="control-group">
+					    			<label class="control-label" for="checkboxes"><strong>{{ q.question }}</strong></label>
+					    			<div class="controls">
+					    				<label class="radio inline">
+					    					<input id="vbad" type="radio" value="0" name="choice_{{ q.id }}">Very Bad
+					    				</label>
+					    				<label class="radio inline">
+					    					<input id="bad" type="radio" value="1" name="choice_{{ q.id }}">Bad
+					    				</label>
+					    				<label class="radio inline">
+					    					<input id="avg" type="radio" value="2" name="choice_{{ q.id }}">Average
+					    				</label>
+					    				<label class="radio inline">
+					    					<input id="good" type="radio" value="3" name="choice_{{ q.id }}">Good
+					    				</label>
+					    				<label class="radio inline">
+					    					<input id="vgood" type="radio" value="4" name="choice_{{ q.id }}">Very Good
+					    				</label>
+					    			</div>
+					    		</div>
+					    	</fieldset>
+					{% endfor %}
+				    	<fieldset>
+				    		<div class="control-group">
+				    			<label class="control-label" for="input01">Comments</label>
+				    			<div class="controls">
+				    				<textarea rows="3" id="textarea" class="input-xlarge" name="comments">{{filled_survey.comment}}</textarea>
+				    			</div>
+				    		</div>
+				    	</fieldset>
+				    	<input type="hidden" name="num_questions" value="{{ questions|length }}">
+				    	<button class="btn btn-large" type="submit">Submit Edited Survey</button>
+				</form>
+			{% else %}
+				<h2>Please Re-Login!</h2>
+			{% endif %}			
+		</div>	
+{% endblock %}

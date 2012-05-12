@@ -2,6 +2,7 @@ The goal of this mobile application system is to create a more balanced and effi
 When doing peer reviews normally, students are not limited in any way to the extent of what ratings they are allowed to give to other students. 
 This often results in very high grades due to the kindness of students. 
 This system is not reflective of the true performance of the students and so once the PeerView system is implemented, there will be a drastic increase in the accuracy of peer evaluation grades.
-There is also a web system to go along with the mobile application.
 
-It is a mobile web application, so you can just run it by opening index.html in any browser. The porting to smartphones will come in the near future.
+It is a mobile web application, and can be accessed at the following URL:
+
+www.pview-guelph.dotcloud.com

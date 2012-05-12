@@ -1,0 +1,34 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">PeerView</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li ><a href="/">Home</a></li>
+              <li class="active"><a href="/about">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+{% endblock %}	
+{% block content %}
+	<!-- Main hero unit for the primary welcome message -->
+	<div class="hero-unit">
+		<h2>About</h2>
+		<strong>Created By:</strong>
+      <ul>
+        <li>Marc Bodmer</li>
+        <li>Andrew Steinbach</li>
+        <li>Darrell Bryne</li>
+      </ul>
+      <strong>Created For:</strong>
+      <ul>
+        <li>Dr. Norman Dubeski</li>
+      </ul>
+      <strong>This was a team project for:</strong> 
+      <br>
+      CIS*3760 Software Engineering (Winter 2012)
+		<br>		
+	</div>	
+{% endblock %}	

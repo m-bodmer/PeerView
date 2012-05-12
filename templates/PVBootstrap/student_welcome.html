@@ -1,0 +1,77 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Welcome {{ user.username|capfirst }}</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li class=""><a href="/help/">Help</a></li>
+              <li class=""><a href="/logout/">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+{% endblock %}
+{% block content %}
+		<!-- Main hero unit for the primary welcome message -->
+		<div class="hero-unit">
+			{% if user.is_authenticated %}
+				<p>
+				Please choose a course.
+				<form class="form-inline" method="POST" action="{% url get_course %}">
+					{% csrf_token %}
+					{% if all_courses %}
+						<select name="selected_course">
+							{% for course in all_courses %}
+							<option>{{ course.name }}</option>
+							{% endfor %}
+						</select>
+						<br>
+						<br>
+						<button class="btn btn-large" type="submit"><i class="icon-search"></i> Lookup Course</button>
+					{% else %}
+						<h3>Sorry, you are not in any courses</h3>
+					{% endif %}
+				</form>
+				
+				
+				<!--<form class="form-horizontal" method="POST" action="">
+					{% csrf_token %}
+			    	<fieldset>
+				    	<legend>Add Course</legend>
+				   	 	<div class="control-group">
+				    		<label class="control-label" for="input01">Course Name</label>
+				    		<div class="controls">
+				    			<input type="text" class="input-xlarge" id="input01" name="course_name">
+				    		</div>
+				    	</div>
+				    	<div class="control-group">
+				    		<label class="control-label" for="input01">Instructor</label>
+				    		<div class="controls">
+				    			<input type="text" class="input-xlarge" id="input02" name="instructor">
+				    		</div>
+				    	</div>
+				    	<div class="control-group">
+				    		<label class="control-label" for="input01">Course Description</label>
+				    		<div class="controls">
+				    			<input type="text" class="input-xlarge" id="input03" name="description">
+				    			<br>
+				    			<br>
+				    			<button class="btn btn-large" type="submit"> Add Course</button>
+				    			{% if added %}
+								<br>
+				    			<br>
+				    			Course Added Successfully
+				    			{% endif %}
+				    		</div>
+				    	</div>
+				    
+				    </fieldset>
+			    </form>-->
+
+			{% else %}
+				<h2>Please Re-Login!</h2>
+			{% endif %}			
+		</div>	
+{% endblock %}

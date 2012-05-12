@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+
+<p>Enter average to grade to:</p>
+
+<form class="form" action="" method="POST">
+
+	{% csrf_token %}
+	
+    Base(Lowest Grade): <input type="text" name="base" /><br />
+    Average: <input type="text" name="average" /><br />
+
+	<input type="hidden" name="action" value="get_grades_specify" />
+    <input type="submit" name="apply" value="Apply average" />
+</form>
+
+{% endblock %}

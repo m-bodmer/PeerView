@@ -1,0 +1,66 @@
+{% extends "PVBootstrap/base.html" %}
+{% block nav %}
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Welcome {{ user.username|capfirst }}</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class=""><a href="/">Home</a></li>
+              <li class=""><a href="/help">Help</a></li>
+              <li class=""><a href="/logout">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+  {% endblock %}
+  {% block content %}
+		<div class="hero-unit">
+			{% if user.is_authenticated %}
+			<h2>Course: {{ course.name }}</h2>
+
+				<!-- Survey Select -->
+				<form class="form-inline" method="POST" action="{% url get_survey course.name %}">
+					{% csrf_token %}
+			    	<fieldset>
+			    		{% if course_surveys and open_surveys %}
+					    	<h3>Select a Survey</h3>
+							<select name="selected_survey">
+								{% for survey in course_surveys %}
+									<option>{{ survey.name }}</option>
+								{% endfor %}
+							</select>
+							<br>
+							<br>
+							<button class="btn btn-large" type="submit"><i class="icon-list-alt icon-white"></i> Get Survey</button>
+						{% else %}
+							Sorry, no open surveys were found.
+						{% endif %}
+				    </fieldset>
+			    </form>
+
+			    <!-- Survey Edit -->
+			    <form class="form-inline" method="POST" action="{% url edit_survey course.name %}">
+					{% csrf_token %}
+			    	<fieldset>
+			    		<h3>Edit a Survey</h3>
+			    		{% if completed_surveys %}				    	
+							<select name="selected_survey">
+								{% for survey in completed_surveys %}
+									<option>{{ survey.survey.name }} | {{ survey.group.group_name }}</option>
+								{% endfor %}
+							</select>
+							<br>
+							<br>
+							<button class="btn btn-large" type="submit"><i class="icon-pencil icon-white"></i> Edit Survey</button>
+						{% else %}
+							No completed surveys yet
+						{% endif %}
+				    </fieldset>
+			    </form>
+
+			{% else %}
+				<h2>Please Re-Login!</h2>
+			{% endif %}			
+		</div>	
+{% endblock %}
